@@ -1,0 +1,19 @@
+.movies__search-box {
+    max-width: 1140px;
+    margin: auto;
+    border-bottom: 1px solid #424242;
+    padding: 70px 0 69px;
+}
+
+@media screen and (max-width: 1100px) {
+    .movies__search-box {
+        max-width: 950px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .movies__search-box {
+        max-width: 300px;
+        padding: 80px 0 109px;
+    }
+}
