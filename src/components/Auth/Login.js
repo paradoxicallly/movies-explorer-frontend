@@ -1,8 +1,12 @@
 import './auth.css'
+import logo from '../../images/logo.svg'
+import { Link, withRouter } from 'react-router-dom';
 
 function Login() {
     return(
         <div className='auth'>
+            <Link to='/'><img className="auth__logo" src={logo} alt="логотип"/></Link>
+            <h1 className='auth__title'>Рады видеть!</h1>
             <form className='auth__form'>
                 <fieldset className='auth__fieldset'>
                     <label className='auth__input-name' htmlFor='email-input'>E-mail</label>
@@ -23,10 +27,10 @@ function Login() {
                     />
                 </fieldset>
                 <button className='auth__button auth__button_login' type='submit'>Войти</button>
-                <p className='auth__login'>Ешё не зарегистрированы? <a className='auth__link' href='#'>Регистрация</a> </p>
+                <p className='auth__login'>Ешё не зарегистрированы? <Link className="auth__link" to="/signup">Регистрация</Link></p>
             </form>
         </div>
     )
 }
 
-export default Login;
+export default withRouter(Login);

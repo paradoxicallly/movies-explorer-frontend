@@ -98,6 +98,12 @@
     grid-area: frontend;
 }
 
+@media screen and (max-width: 1100px) {
+    .about {
+        max-width: 950px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .about {
         max-width: 668px;

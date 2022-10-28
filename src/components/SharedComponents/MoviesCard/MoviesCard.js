@@ -1,5 +1,5 @@
 import './movies-card.css'
-import {movieCard} from '../../../utils/constants.js'
+import { movieCard } from '../../../utils/constants.js'
 
 function MoviesCard() {
     return (
@@ -9,7 +9,10 @@ function MoviesCard() {
                     <h2 className='movies-card__title'>{movieCard.name}</h2>
                     <p className='movies-card__duration'>{movieCard.duration}</p>
                 </div>
-                <button className='movies-card__save-button' type='button' />
+                <button 
+                  className={window.location.pathname === '/movies' ? 'movies-card__save-button': 'movies-card__delete-button'} 
+                  type='button' 
+                />
             </div>
             <img className='movies-card__image' src={movieCard.poster} alt='постер' />
         </li>
