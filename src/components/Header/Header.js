@@ -6,10 +6,10 @@ import Navigation from './Navigation/Navigation';
 function Header(props) {
     const HeaderComponent = () => {
         return (
-            <div className='header'>
+            <header className='header'>
                 <Link to='/'><img className="header__logo" src={logo} alt="логотип"/></Link>
                 <Navigation />
-            </div>
+            </header>
         )
     }
 

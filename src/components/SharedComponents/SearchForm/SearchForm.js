@@ -2,10 +2,10 @@ import './search-form.css'
 
 function SearchForm() {
     return (
-        <div className='movies__search'>
+        <form className='movies__search' required>
             <div className='movies__search-form'>
                 <input className='movies__input' type='text' placeholder='Фильм' />
-                <button className='movies__button' type='button' />
+                <button className='movies__button' type='submit' />
             </div>
             <div className='movies__checkbox'>
                 <label className='movies__search-checkbox'>
@@ -14,7 +14,7 @@ function SearchForm() {
                 </label>
                 <p className='movies__checkbox-name'>Короткометражки</p>
             </div>
-        </div>
+        </form>
     )
 }
 

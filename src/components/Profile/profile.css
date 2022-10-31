@@ -76,3 +76,14 @@
     color: #EE3465;
     margin-top: 16px;
 }
+
+@media screen and (max-width: 590px) {
+    .profile {
+        max-width: 260px;
+        padding: 70px 0 40px;
+    }
+
+    .profile__fieldset {
+        margin: 80px 0 379px;
+    }
+}

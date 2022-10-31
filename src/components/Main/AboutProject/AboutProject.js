@@ -2,7 +2,7 @@ import './aboutproject.css'
 
 function AboutProject() {
     return (
-        <div className="about" id="about">
+        <section className="about" id="about">
             <h2 className="about__title">О проекте</h2>
             <div className='about__container'>
                 <div className="about__container-info">
@@ -30,7 +30,7 @@ function AboutProject() {
                     <p className='about__scale-text'>Front-end</p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

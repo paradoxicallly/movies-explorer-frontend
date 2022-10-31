@@ -17,29 +17,31 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path='/'>
-            <Main />
-          </Route>
-          <Route path='/movies'>
-            <Movies />
-          </Route>
-          <Route path='/saved-movies'>
-            <SavedMovies />
-          </Route> 
-          <Route path='/profile'>
-            <Profile />
-          </Route>
-          <Route path="/signin">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Register />
-          </Route>
-          <Route path='/404'>
-            <Error />
-          </Route>
-        </Switch>
+        <main>
+          <Switch>
+            <Route exact path='/'>
+              <Main />
+            </Route>
+            <Route path='/movies'>
+              <Movies />
+            </Route>
+            <Route path='/saved-movies'>
+              <SavedMovies />
+            </Route> 
+            <Route path='/profile'>
+              <Profile />
+            </Route>
+            <Route path="/signin">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <Register />
+            </Route>
+            <Route path='/404'>
+              <Error />
+            </Route>
+          </Switch>
+        </main>
         <Footer />
       </div>
     </BrowserRouter>

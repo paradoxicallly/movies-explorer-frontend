@@ -5,7 +5,8 @@
 .promo__container {
     background-color: #272727;
     padding: 160px 0 30px;
-    margin: auto
+    margin: auto;
+    border-radius: 10px;
 }
 
 .promo__title {
@@ -22,7 +23,7 @@
     letter-spacing: -0.04em;;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1140px) {
     .promo {
         max-width: 950px;
     }

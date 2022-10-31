@@ -43,7 +43,7 @@
     border: none;
     padding: 0;
     margin-left: 46px;
-    
+    cursor: pointer;
 }
 
 .movies__checkbox {
@@ -113,7 +113,7 @@
     margin: 0 0 0 14px;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1140px) {
     .movies__search {
         max-width: 950px;
     }
@@ -123,7 +123,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 965px) {
     .movies__search {
         max-width: 708px;
     }
@@ -137,7 +137,7 @@
     }
 }
 
-@media screen and (max-width: 707px) {
+@media screen and (max-width: 725px) {
     .movies__search {
         max-width: 576px;
     }
@@ -151,14 +151,14 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 590px) {
     .movies__search {
         max-width: 300px;
         flex-direction: column;
     }
 
     .movies__search-form {
-        margin: 0;
+        margin: 10px 0;
         width: 300px;
     }
 

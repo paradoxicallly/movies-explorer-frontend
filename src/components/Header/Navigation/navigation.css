@@ -20,6 +20,7 @@
     width: 76px;
     height: 32px;
     background: #3DDC84;
+    border: none;
     border-radius: 3px;
     font-style: normal;
     font-weight: 500;
@@ -98,7 +99,7 @@
     display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 965px) {
     .header__nav-menu {
         display: none;
         position: fixed;
@@ -125,7 +126,7 @@
         gap: 28px;
     }
 
-    .header__link {
+    .header__movies-link {
         font-size: 18px;
         line-height: 22px;
     }
@@ -153,7 +154,7 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 590px) {
     .header__links {
         gap: 14px;
     }

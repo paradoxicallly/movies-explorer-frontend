@@ -7,19 +7,19 @@
     align-items: center;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1140px) {
     .header {
         max-width: 950px;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 965px) {
     .header {
         max-width: 708px;
     }
 }
 
-@media screen and (max-width: 707px) {
+@media screen and (max-width: 725px) {
     .header {
         max-width: 576px;
     }

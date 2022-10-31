@@ -1,4 +1,5 @@
 import './profile.css'
+import { Link, withRouter } from 'react-router-dom';
 
 function Profile() {
     return(
@@ -28,12 +29,12 @@ function Profile() {
                     </div>
                 </fieldset>
                 <div className='profile__links'>
-                    <a className='profile__link profile__link_edit' href='#'>Редактировать</a>
-                    <a className='profile__link profile__link_exit' href='#'>Выйти из аккаунта</a>
+                    <Link className='profile__link profile__link_edit' to='#'>Редактировать</Link>
+                    <Link className='profile__link profile__link_exit' to='#'>Выйти из аккаунта</Link>
                 </div>
             </form>
         </div>
     )
 }
 
-export default Profile;
+export default withRouter(Profile);
