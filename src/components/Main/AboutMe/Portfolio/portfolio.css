@@ -13,6 +13,12 @@
     margin: 100px 0 50px;
 }
 
+.portfolio__container {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .portfolio__link-container {
     display: flex;
     justify-content: space-between;
@@ -20,6 +26,10 @@
     border-bottom: 1px solid #424242;
     padding-bottom: 19px;
     margin-bottom: 20px;
+}
+
+.portfolio__link-container:hover {
+    opacity: 0.8;
 }
 
 .portfolio__link-container:last-of-type {

@@ -23,6 +23,10 @@
     border-radius: 10px;
 }
 
+.navtab__link:hover {
+    opacity: 0.8;
+}
+
 .navtab__link:link, .navtab__link:visited, .navtab__link:focus{
     background-color: #303030;
 }

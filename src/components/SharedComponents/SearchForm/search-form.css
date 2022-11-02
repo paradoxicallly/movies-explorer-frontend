@@ -46,6 +46,10 @@
     cursor: pointer;
 }
 
+.movies__button:hover {
+    opacity: 0.8;
+}
+
 .movies__checkbox {
     height: 52px;
     border-left: 1px solid #424242;

@@ -16,6 +16,10 @@
     cursor: pointer;
 }
 
+.header__link:hover {
+    opacity: 0.8;
+}
+
 .header__button {
     width: 76px;
     height: 32px;
@@ -55,6 +59,10 @@
     text-decoration: none;
 }
 
+.header__movies-link:hover {
+    opacity: 0.8;
+}
+
 .header__movies-link_hidden {
     display: none;
 }
@@ -71,6 +79,10 @@
     align-items: center;
 }
 
+.header__profile-link:hover {
+    opacity: 0.8;
+}
+
 .header__profile-icon {
     margin-left: 7px;
 }
@@ -85,6 +97,11 @@
     width: 22px;
     height: 22px;
     display: none;
+    cursor: pointer;
+}
+
+.header__button-close:hover {
+    opacity: 0.8;
 }
 
 .header__button-menu {
@@ -97,6 +114,11 @@
     width: 44px;
     height: 44px;
     display: none;
+    cursor: pointer;
+}
+
+.header__button-menu:hover {
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 965px) {

@@ -35,9 +35,8 @@
 }
 
 .error__link:hover {
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: pointer;
-    text-decoration: underline;
 }
 
 @media screen and (max-width: 576px) {
