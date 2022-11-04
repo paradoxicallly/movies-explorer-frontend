@@ -1,0 +1,51 @@
+.movies__search-box {
+    max-width: 1140px;
+    margin: auto;
+    border-bottom: 1px solid #424242;
+    padding: 70px 0 69px;
+}
+
+.movies__search-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.movies__search-button {
+    border: 1px solid #424242;
+    border-radius: 7px;
+    background: transparent;
+    color: white;
+    height: 36px;
+    width: 320px;
+    cursor: pointer;
+}
+
+.movies__search-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 1140px) {
+    .movies__search-box {
+        max-width: 950px;
+    }
+}
+
+@media screen and (max-width: 965px) {
+    .movies__search-box {
+        max-width: 710px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .movies__search-box {
+        max-width: 576px;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .movies__search-box {
+        max-width: 300px;
+        padding: 80px 0 109px;
+    }
+}

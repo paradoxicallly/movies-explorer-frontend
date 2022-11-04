@@ -1,0 +1,51 @@
+.navtab__links {
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 151px;
+}
+
+.navtab__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 36px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.navtab__link:hover {
+    opacity: 0.8;
+}
+
+.navtab__link:link, .navtab__link:visited, .navtab__link:focus{
+    background-color: #303030;
+}
+
+@media screen and (max-width: 800px) {
+    .navtab__links {
+        margin-top: 314px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navtab__links {
+        margin-top: 212px;
+        gap: 6px;
+    }
+
+    .navtab__link {
+        width: 82px;
+        height: 26px;
+        font-size: 10px;
+    }
+}

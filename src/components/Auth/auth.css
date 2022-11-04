@@ -1,0 +1,126 @@
+.auth {
+    max-width: 396px;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.auth__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #fff;
+    margin: 40px 0;
+}
+
+.auth__fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin: 0 0 83px;
+    padding: 0;
+}
+
+.auth__input-name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8B8B8B;
+    margin-top: 24px;
+}
+
+.auth__input-name:first-of-type {
+    margin: 0;
+}
+
+.auth__input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid #424242;
+    padding: 0 0 10px;
+    margin: 0;
+}
+
+.auth__input:focus {
+    outline: none;
+    border-bottom: 1px solid #4285F4;
+}
+
+.auth__button {
+    width: 396px;
+    height: 45px;
+    background: #4285F4;
+    border-radius: 3px;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFF;
+    margin: 69px auto 16px;
+    cursor: pointer;
+}
+
+.auth__button:hover {
+    opacity: 0.8;
+}
+
+.auth__button_login {
+    margin-top: 179px;
+}
+
+.auth__login {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #8B8B8B;
+    margin: 0;
+}
+
+.auth__link {
+    color: #4285F4;
+    text-decoration: none;
+}
+
+.auth__link:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+    .auth {
+        max-width: 260px;
+    }
+
+    .auth__logo {
+        display: block;
+        margin: auto;
+    }
+
+    .auth__title {
+        text-align: center;
+        margin: 50px 0 80px;
+    }
+
+    .auth__button {
+        width: 260px;
+        height: 45px;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 157px auto 14px;
+    }
+
+    .auth__login {
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 30px;
+    }
+}
