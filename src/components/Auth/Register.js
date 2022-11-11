@@ -9,7 +9,7 @@ function Register(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.onSubmit(values.username, values, values.email, values.password)
+        props.onSubmit(values.username, values.email, values.password)
         resetForm()
     }
     return(
