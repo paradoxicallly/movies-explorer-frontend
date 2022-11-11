@@ -12,14 +12,12 @@ import Register from '../Auth/Register';
 import Error from '../Error/Error';
 import ProtectedRoute from "../ProtectedRoute";
 import { CurrentUserContext } from '../../context/CurrentUserContext';
-// import { SavedMoviesContext } from "../../context/SavedMoviesContext";
 import { register, checkTokenValidity, authorize } from "../../utils/authApi";
 import { getUserInfo, setUserInfo } from "../../utils/mainApi";
 
 function App() {
   // state
   const [currentUser, setCurrentUser] = React.useState({});
-  // const [savedMovies, setSavedMovies] = React.useState([]);
   const [loggedIn, setLoggedIn] = React.useState(true)
   const history = useHistory();
 
@@ -64,7 +62,7 @@ function handleUpdateUser(name, email) {
   function handleLogOut() {
     setLoggedIn(false);
     localStorage.removeItem("token")
-}
+  }
 
   // Hooks
   React.useEffect(() => {
