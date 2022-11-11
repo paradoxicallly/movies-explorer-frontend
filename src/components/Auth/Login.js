@@ -1,32 +1,50 @@
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import './auth.css'
 import logo from '../../images/logo.svg'
-import { Link, withRouter } from 'react-router-dom';
+import { useFormWithValidation } from '../FormValidator';
 
-function Login() {
+function Login(props) {
+    const { values, handleChange, isValid, resetForm, errors } = useFormWithValidation();
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.onSubmit(values.email, values.password)
+        resetForm()
+    }
+
     return(
         <div className='auth'>
             <Link to='/'><img className="auth__logo" src={logo} alt="логотип"/></Link>
             <h1 className='auth__title'>Рады видеть!</h1>
-            <form className='auth__form'>
+            <form className='auth__form' onSubmit={handleSubmit}>
                 <fieldset className='auth__fieldset'>
                     <label className='auth__input-name' htmlFor='email-input'>E-mail</label>
                     <input
-                        className='auth__input auth__input_type_email'
+                        className={`auth__input ${errors.email ? 'auth__input-error' : ''} auth__input_type_email`}
                         type='email'
-                        name='auth-email'
+                        value={values.email}
+                        defaultValue=''
+                        onChange={handleChange}
+                        name='email'
                         id='email-input'
                         required
                     />
+                    {errors.email && <span className='auth__input-error-field'>{errors.email}</span>}
                     <label className='auth__input-name' htmlFor='password-input'>Пароль</label>
                     <input
-                        className='auth__input auth__input_type_password'
+                        className={`auth__input ${errors.password ? 'auth__input-error' : ''} auth__input_type_password`}
                         type='password'
-                        name='auth-password'
+                        value={values.password}
+                        defaultValue=''
+                        onChange={handleChange}
+                        name='password'
                         id='password-input'
                         required
                     />
+                    {errors.password && <span className='auth__input-error-field'>{errors.password}</span>}
                 </fieldset>
-                <button className='auth__button auth__button_login' type='submit'>Войти</button>
+                <button className='auth__button auth__button_login' type='submit' disabled={!isValid}>Войти</button>
                 <p className='auth__login'>Ешё не зарегистрированы? <Link className="auth__link" to="/signup">Регистрация</Link></p>
             </form>
         </div>

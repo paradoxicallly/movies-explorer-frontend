@@ -8,7 +8,7 @@ function Header(props) {
         return (
             <header className='header'>
                 <Link to='/'><img className="header__logo" src={logo} alt="логотип"/></Link>
-                <Navigation />
+                <Navigation loggedIn={props.loggedIn} />
             </header>
         )
     }

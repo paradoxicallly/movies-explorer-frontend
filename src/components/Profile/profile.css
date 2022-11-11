@@ -51,26 +51,34 @@
     max-width: 122px;
 }
 
-.profile__links {
+.profile__buttons {
     display: flex;
     flex-direction: column;
 }
 
-.profile__link {
+.profile__button {
     text-align: center;
     text-decoration: none;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
     color: #FFF;
+    background-color: inherit;
+    border: none;
 }
 
-.profile__link:hover {
+.profile__button:disabled {
+    color: #8B8B8B;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.profile__button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.profile__link_exit {
+.profile__button_exit {
     font-weight: 500;
     color: #EE3465;
     margin-top: 16px;
