@@ -1,5 +1,4 @@
-// export const BASE_URL = 'https://api.paradoxically.nomoredomains.icu';
-export const BASE_URL = 'http://localhost:4000';
+export const BASE_URL = 'https://api.paradoxicallly.nomoredomains.icu';
 
 export const register = (name ,email, password) => {
   return fetch(`${BASE_URL}/signup`, {

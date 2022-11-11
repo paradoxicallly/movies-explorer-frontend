@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'https://api.paradoxicallly.nomoredomains.icu';
 const headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
