@@ -14,6 +14,7 @@ import ProtectedRoute from "../ProtectedRoute";
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 import { register, checkTokenValidity, authorize } from "../../utils/authApi";
 import { getUserInfo, setUserInfo } from "../../utils/mainApi";
+import { userUpdateSuccess } from '../../utils/constants';
 
 function App() {
   // state
@@ -29,22 +30,24 @@ function App() {
             localStorage.setItem("token", res.token)
         }
         setLoggedIn(true)
-        this.history.push("/")
+        this.history.push("/movies")
         // eslint-disable-next-line no-restricted-globals
         location.reload();
     })
     .catch((err) => {
         console.log(err);
+        alert(err)
     })
 }
 
 function handleRegistration(name, email, password) {
     register(name, email, password)
     .then(res => {
-        this.history.push("/")
+        this.history.push("/movies")
     })
     .catch((err) => {
         console.log(err);
+        alert(err)
     })
 }
 
@@ -52,16 +55,20 @@ function handleUpdateUser(name, email) {
   setUserInfo(name, email)
   .then(res => {
     setCurrentUser(res.user)
-    console.log(res)
+    alert(userUpdateSuccess)
   })
   .catch((err) => {
     console.log(err);
+    alert(err)
   })
 }
 
   function handleLogOut() {
     setLoggedIn(false);
+    setCurrentUser({})
     localStorage.removeItem("token")
+    localStorage.removeItem('storageMovies')
+    localStorage.removeItem('searchOptions')
   }
 
   // Hooks
@@ -116,7 +123,7 @@ function handleUpdateUser(name, email) {
             <Route path="/signup">
               <Register onSubmit={handleRegistration} />
             </Route>
-            <Route path='/404'>
+            <Route path='*'>
               <Error />
             </Route>
           </Switch>

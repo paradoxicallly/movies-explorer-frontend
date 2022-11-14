@@ -40,6 +40,7 @@ export const addSavedMovie = (data) => {
         method: 'POST',
         body: JSON.stringify(data)
     })
+    .then(res => checkResponse(res))
 }
 
 export const removeSavedMovies = (movieId) => {

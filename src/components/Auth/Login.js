@@ -5,12 +5,11 @@ import logo from '../../images/logo.svg'
 import { useFormWithValidation } from '../FormValidator';
 
 function Login(props) {
-    const { values, handleChange, isValid, resetForm, errors } = useFormWithValidation();
+    const { values, handleChange, isValid, errors } = useFormWithValidation();
 
     function handleSubmit(e) {
         e.preventDefault();
         props.onSubmit(values.email, values.password)
-        resetForm()
     }
 
     return(

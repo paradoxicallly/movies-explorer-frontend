@@ -25,15 +25,17 @@ function MoviesCard(props) {
             thumbnail: movieImgUrl
         }
         addSavedMovie(movieObj)
-        props.movieUpdate()
+        .then((resp) => setInnerId(resp.data._id))
         setSaved(true)
     }
 
     async function handleDeleteMovie() {
        await removeSavedMovies(props.savedMovies ? props.movie._id : innerId)
+       if (props.savedMovies) {
+        props.movieUpdate(props.movie._id)
+       }
        setSaved(false)
        setInnerId('')
-       props.movieUpdate()
     }
 
     function handleToggleSave() {

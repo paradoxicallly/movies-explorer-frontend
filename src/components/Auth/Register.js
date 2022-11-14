@@ -5,12 +5,11 @@ import { Link, withRouter } from 'react-router-dom';
 import { useFormWithValidation } from '../FormValidator';
 
 function Register(props) {
-    const { values, handleChange, isValid, resetForm, errors } = useFormWithValidation();
+    const { values, handleChange, isValid, errors } = useFormWithValidation();
 
     function handleSubmit(e) {
         e.preventDefault();
         props.onSubmit(values.username, values.email, values.password)
-        resetForm()
     }
     return(
         <div className='auth'>

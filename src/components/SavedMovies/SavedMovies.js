@@ -29,6 +29,12 @@ function SavedMovies() {
       });
     }
 
+    const updateMoviesArray = (movieId) => {
+      const arrayWithoutDeletedMovie = filteredMovies.filter(({_id}) => _id !== movieId)
+      console.log(arrayWithoutDeletedMovie)
+      setFilteredMovies(arrayWithoutDeletedMovie)
+    }
+
     React.useEffect(() => {
         handleGetMovies()
     }, [])
@@ -37,7 +43,7 @@ function SavedMovies() {
             <div className='movies__search-box'>
                 <SearchForm onSubmit={handleSearchMovie} />
             </div>
-            <MoviesCardList moviesList={filteredMovies} savedMovies={true} movieUpdate={handleGetMovies} />
+            <MoviesCardList moviesList={filteredMovies} savedMovies={true} movieUpdate={updateMoviesArray} />
         </div>
     )
 }

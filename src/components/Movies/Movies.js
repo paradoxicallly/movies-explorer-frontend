@@ -9,33 +9,48 @@ import { handleFilterMovies } from '../../utils/moviesFilter';
 import { findMovieError, findMovieNoResult } from '../../utils/constants';
 import { SavedMoviesContext } from "../../context/SavedMoviesContext";
 import { useCurrentWidth } from '../../utils/windowResize';
+import { moviesListStep, moviesListFirstRender }  from '../../utils/constants' 
 
 function Movies() {
     const width = useCurrentWidth()
     const [isLoading, setIsLoading] = useState(false);
-    const [moviesListCounter, setMoviesListCounter] = useState(12); // сколько будет показываться в самом начале
-    const [moviesCounterStep, setMoviesCounterStep] = useState(3); // сколько будет добавляться по клику
+    const [moviesListCounter, setMoviesListCounter] = useState(moviesListFirstRender); // сколько будет показываться в самом начале
+    const [moviesCounterStep, setMoviesCounterStep] = useState(moviesListStep); // сколько будет добавляться по клику
     const [filteredMovieList, setFilteredMoviesList] = useState([]);
     const [countedMovieList, setCountedMovieList] = useState([]);
     const [savedMovies, setSavedMovies] = useState([]);
     const [notificationText, setNotificationText] = useState('')
 
     const handleSearchMovie = (name, shortMovie) => {
-      setIsLoading(true)  
-      getAllMovies()
-      .then(res => {
-        const movies = handleFilterMovies(name, shortMovie, res)
+      const storageMovies = localStorage.getItem('storageMovies')
+      if (!storageMovies) {
+        setIsLoading(true)
+        getAllMovies()
+        .then(res => {
+          const movies = handleFilterMovies(name, shortMovie, res)
+          localStorage.setItem('allMovies', JSON.stringify(res))
+          localStorage.setItem('storageMovies', JSON.stringify(movies))
+          if(!name.length || !movies.length) {
+            setNotificationText(findMovieNoResult)
+          }
+          setFilteredMoviesList(movies)
+        })
+        .catch((err) => {
+          setNotificationText(findMovieError)
+          console.log(err);
+        })
+        .finally(() => setIsLoading(false))
+        return
+      } else {
+        const allMovies = JSON.parse(localStorage.getItem('allMovies'))
+        const movies = handleFilterMovies(name, shortMovie, allMovies)
         localStorage.setItem('storageMovies', JSON.stringify(movies))
         if(!name.length || !movies.length) {
           setNotificationText(findMovieNoResult)
         }
         setFilteredMoviesList(movies)
-      })
-      .catch((err) => {
-        setNotificationText(findMovieError)
-        console.log(err);
-      })
-      .finally(() => setIsLoading(false))
+
+      }
     }
 
     const handleGetMovies = () => {
@@ -90,7 +105,7 @@ function Movies() {
             </section>
             { isLoading ? 
               <section className='movies__search-button-container'> <Preloader/> </section> : 
-              <MoviesCardList moviesList={countedMovieList} movieUpdate={handleGetMovies} savedMoviesList={savedMovies} savedMovies={false} /> 
+              <MoviesCardList moviesList={countedMovieList} savedMoviesList={savedMovies} savedMovies={false} /> 
             }
             { (filteredMovieList.length > 3 && filteredMovieList.length !== countedMovieList.length && !isLoading) && <section className='movies__search-button-container'>
               <button className='movies__search-button' type='button' onClick={handleShowMoreMovies}>Еще</button>
