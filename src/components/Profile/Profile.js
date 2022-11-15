@@ -18,15 +18,17 @@ function Profile(props) {
         props.onLogOut()
     }
 
+    // у меня при обновлении страницы данные в поля заполняются
     React.useEffect(() => {
-        values.username = currentUser.name
-        values.email = currentUser.email
+       if (currentUser.name) {
+         values.username = currentUser.name
+         values.email = currentUser.email
+       }
     }, [currentUser])
 
     return(
         <div className='profile'>
             <h1 className='profile__title'>{`Привет, ${currentUser.name}!`}</h1>
-            {/* <section className='profile__alert'>{{}}</section> */}
             <form className='profile__form' onSubmit={handleSubmit}>
                 <fieldset className='profile__fieldset'>
                     <div className='profile__field'>
