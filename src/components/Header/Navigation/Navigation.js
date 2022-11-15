@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import './navigation.css'
 import account from '../../../images/account.svg'
 
-function Navigation() {
+function Navigation(props) {
     const [active, setActive] = useState('header__nav-menu')
 
     const navToggle = () => {
@@ -12,18 +12,16 @@ function Navigation() {
 
     return(
         <div className='navigation'>
-            {window.location.pathname === "/" && (
+            {!props.loggedIn && (
                 <nav className='header__links'>
                     <Link className="header__link" to="/signup">Регистрация</Link>
-                    <Link className="header__link" to="/signup">
+                    <Link className="header__link" to="/signin">
                       <button className='header__button' type='button'>Войти</button>
                     </Link>
                 </nav>
             )}
 
-            {(window.location.pathname === "/movies" || 
-            window.location.pathname === "/saved-movies" ||
-            window.location.pathname === "/profile" ) && (
+            {props.loggedIn && (
                 <div className='header__movies-navigation'>
                     <nav className={active}>
                         <ul className='header__movies-links'>

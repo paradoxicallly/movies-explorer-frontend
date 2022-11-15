@@ -21,30 +21,43 @@
     cursor: pointer;
 }
 
+.movies_search-results {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
 .movies__search-button:hover {
     opacity: 0.8;
 }
 
 @media screen and (max-width: 1140px) {
-    .movies__search-box {
+    .movies__search-box,
+    .movies_search-results {
         max-width: 950px;
     }
 }
 
 @media screen and (max-width: 965px) {
-    .movies__search-box {
+    .movies__search-box,
+    .movies_search-results {
         max-width: 710px;
     }
 }
 
 @media screen and (max-width: 725px) {
-    .movies__search-box {
+    .movies__search-box,
+    .movies_search-results {
         max-width: 576px;
     }
 }
 
 @media screen and (max-width: 590px) {
-    .movies__search-box {
+    .movies__search-box,
+    .movies_search-results {
         max-width: 300px;
         padding: 80px 0 109px;
     }

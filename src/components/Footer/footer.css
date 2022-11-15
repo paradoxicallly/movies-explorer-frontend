@@ -1,7 +1,6 @@
 .footer {
     max-height: 172px;
     padding: 79px 70px 20px;
-    margin: auto;
 }
 
 .footer__title {
@@ -54,6 +53,7 @@
         max-width: 320px;
         max-height: 243px;
         padding: 79px 10px 10px;
+        margin: auto;
     }
 
     .footer__title {

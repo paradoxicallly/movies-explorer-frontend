@@ -1,6 +1,7 @@
-export const movieCard = {
-    name: "Название",
-    duration: "1ч 33м",
-    saved: false,
-    poster: "https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-}
+export const findMovieError = "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
+export const findMovieNoResult = "Ничего не найдено"
+export const userUpdateSuccess = "Данные пользователя были успешно обновленны"
+
+export const shortMovieDuration = 40
+export const moviesListFirstRender = 12
+export const moviesListStep = 3
