@@ -43,6 +43,7 @@ function App() {
 function handleRegistration(name, email, password) {
     register(name, email, password)
     .then(res => {
+        setLoggedIn(true)
         this.history.push("/movies")
     })
     .catch((err) => {
@@ -69,6 +70,7 @@ function handleUpdateUser(name, email) {
     localStorage.removeItem("token")
     localStorage.removeItem('storageMovies')
     localStorage.removeItem('searchOptions')
+    localStorage.removeItem('allMovies')
   }
 
   // Hooks
